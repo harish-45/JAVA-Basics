@@ -1,5 +1,5 @@
 // you must run from the parent directory.
-package Oops.This;
+package Oops.Other.This;
 
 // This keyword referce to that object ('obj' reference variable) who is call Constructor or Methods 
 public class Student {

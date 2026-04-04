@@ -1,4 +1,4 @@
-package Oops.This;
+package Oops.Other.This;
 
 public class Main {
     public static void main(String[] args) {
