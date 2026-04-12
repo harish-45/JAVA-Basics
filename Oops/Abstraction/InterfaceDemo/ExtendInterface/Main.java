@@ -19,6 +19,10 @@ public class Main implements B{
         
         obj.show();
         obj.greet();
+
+        // say Hello is not override by Main class 
+        // ..it is a default method in interface
+        obj.sayHello();
     }
     
 }
