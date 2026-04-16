@@ -2,7 +2,7 @@ package CollectionFramework.ArrayList;
 
 import java.util.ArrayList;
 
-public class JavaAl {
+public class InBuiltArraylist {
 
     public static void main(String[] args) {
 
