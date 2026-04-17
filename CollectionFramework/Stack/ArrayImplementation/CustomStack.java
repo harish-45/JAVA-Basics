@@ -1,4 +1,4 @@
-package CollectionFramework.Stack;
+package CollectionFramework.Stack.ArrayImplementation;
 
 public class CustomStack {
     protected int[] data;
