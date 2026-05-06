@@ -9,7 +9,7 @@ public class MultiCatch {
     public static int devide(int a, int b) {
         try {
             String str = null;
-            str.charAt(0);
+            str.charAt(0); 
             int res =  a / b;
             return res;
         } catch (NullPointerException | ArithmeticException e) { // Here e is an object that is thrown at runtime by JVM
