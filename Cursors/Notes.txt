@@ -1,0 +1,39 @@
+Overview
+- Definition: Cursor — an object used to traverse a collection sequentially without exposing its internal structure.
+- Purpose: Provide a uniform, safe way to visit elements; support encapsulation and controlled modification during traversal.
+
+Cursor Types
+- Enumeration: Legacy, read-only, forward-only cursor (methods: hasMoreElements(), nextElement()).
+- Iterator: Modern cursor for ALL Collection types (methods: hasNext(), next(), remove()); supports safe element removal via remove().
+- ListIterator: Bidirectional cursor for lists (methods: hasNext(), next(), hasPrevious(), previous(), add(), remove(), set()); supports read/write and backward traversal.
+
+Characteristics
+- Fail-fast: Most cursors detect structural modifications done outside the cursor and throw ConcurrentModificationException.
+- Type-safety: Use generics (e.g., Iterator<String>) to avoid casts and runtime errors; raw cursors are allowed but discouraged.
+- Encapsulation: Cursor methods hide collection internals and prevent direct index manipulation.
+- Directionality: Enumeration/Iterator are forward-only; ListIterator supports forward and backward movement.
+
+Usage Examples
+- Enumeration (legacy):
+  Enumeration<E> e = vector.elements();
+  while (e.hasMoreElements()) { E item = e.nextElement(); }
+- Iterator (remove safe):
+  Iterator<E> it = list.iterator();
+  while (it.hasNext()) { E x = it.next(); if (cond) it.remove(); }
+- ListIterator (bidirectional & add):
+  ListIterator<E> li = list.listIterator();
+  while (li.hasNext()) { E x = li.next(); } li.add(newItem);
+
+Best Practices
+- Prefer Iterator/ListIterator over Enumeration.
+- Modify collections only via the cursor's methods (remove(), add(), set()) while iterating.
+- Use generics (e.g., Iterator<String>) for compile-time type safety.
+- Avoid calling next() multiple times in one statement — store the result in a variable if used more than once.
+
+Common Pitfalls
+- Consuming two elements accidentally: calling next() twice in a single line skips elements and can cause NoSuchElementException.
+- ConcurrentModificationException: modifying the collection directly (e.g., list.add(...)) while iterating with a fail-fast cursor.
+- Assuming covariance: List<String> is not a List<Object> — use List<Object> when truly mixing types.
+
+Summary
+- Use cursors to traverse collections safely and consistently; prefer modern generic cursors and modify collections only through cursor APIs during iteration.
