@@ -30,11 +30,11 @@ public class Basic {
         System.out.println(day); // THURSDAY
 
         // ordinal means the position of that day
-        System.out.println(day.ordinal());
+        System.out.println(day.ordinal()); // 3
 
-        //
         System.out.println();
 
+        // Iterating Through Enum :
         for (Week d : Week.values()) {
         System.out.println(" :-> " + d);
         }

@@ -1,0 +1,100 @@
+ENUM - ENUMERATION
+==================
+
+What is Enum?
+- A special "class" that represents a group of constants (unchangeable variables).
+- Used to define a set of named constants.
+- Introduced in Java 5.
+- All enums implicitly extend java.lang.Enum class.
+
+Why Use Enum?
+- Improves code readability by using meaningful names instead of numbers or strings.
+- Provides type safety - compiler checks for valid values.
+- Reduces errors from invalid values.
+- Makes code more maintainable.
+
+Basic Syntax:
+	enum Color {
+		RED, GREEN, BLUE;
+	}
+
+Usage:
+	Color c = Color.RED;
+	
+Iterating Through Enum:
+	for (Color c : Color.values()) {
+		System.out.println(c);
+	}
+
+Enum with Constructor:
+- Enums can have constructors to assign values to constants.
+
+	enum Day {
+		MONDAY(1), TUESDAY(2), WEDNESDAY(3);
+		
+		private int value;
+		
+		Day(int value) {
+			this.value = value;
+		}
+		
+		public int getValue() {
+			return value;
+		}
+	}
+
+Enum with Methods:
+- Enums can have methods like regular classes.
+- Useful for defining behavior for each constant.
+
+	enum Status {
+		ACTIVE("Currently active"),
+		INACTIVE("Not active");
+		
+		private String description;
+		
+		Status(String description) {
+			this.description = description;
+		}
+		
+		public String getDescription() {
+			return description;
+		}
+	}
+
+Enum vs Regular Class:
+- Enum constants are instances of the enum itself.
+- All enum constants are final and static.
+- Cannot instantiate enum using 'new' keyword.
+- Enum can implement interfaces.
+
+Common Enum Methods:
+- values()        - Returns an array of all enum constants
+- valueOf()       - Returns enum constant by name
+- ordinal()       - Returns position of the constant (0-indexed)
+- name()          - Returns the name of the constant
+- compareTo()     - Compares two enum constants by ordinal value
+
+Example Usage:
+	Day day = Day.MONDAY;
+	System.out.println(day.name());           // MONDAY
+	System.out.println(day.ordinal());        // 0
+	System.out.println(Day.valueOf("TUESDAY")); // TUESDAY
+
+Enum in Switch Statements:
+	switch (day) {
+		case MONDAY:
+			System.out.println("Start of week");
+			break;
+		case FRIDAY:
+			System.out.println("Weekend coming");
+			break;
+		default:
+			System.out.println("Mid week");
+	}
+
+Key Points:
+- Enums are constants, so all names should be UPPERCASE by convention.
+- Each enum constant is a static final reference to an instance of the enum.
+- Enums are type-safe and can be used in collection generics.
+- Enum constants can have different attributes and behaviors.
