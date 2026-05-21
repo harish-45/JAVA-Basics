@@ -16,7 +16,6 @@ public class Test {
             return a / b;
         } catch (ArithmeticException e) { // Here e is an object that is thrown at runtime by JVM
             System.out.println(e);// As you know sout call the toString() Method and Every class has its own toString()    { java.lang.ArithmeticException: / by zero }
-    
             // String s = getClass().getName();
             // String message = getLocalizedMessage();
             // return (message != null) ? (s + ": " + message) : s;
