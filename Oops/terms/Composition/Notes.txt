@@ -1,0 +1,14 @@
+Composition 
+- "part-of" relationship btw objects.-
+
+- One class contains another class as a part of it, and the contained class cannot exist without the container class.
+- Allows you to create complex objects by combining simpler ones
+- for Example : A Engine is part of a Car. If the Car is destroyed, the Engine is also destroyed
+
+👉 Composition is a strong form of association where the lifecycle of the part (e.g., Engine) is dependent on the lifecycle of the whole (e.g., Car).
+
+why Use Composition? :
+👉 Code Reusability: Allows you to reuse existing classes by including them as parts of new classes .
+👉 Better Modularity: Promotes modular design by breaking down complex systems into smaller, manageable parts.
+tight Coupling: Creates a strong relationship between the whole and its parts, ensuring that they are closely related and work together seamlessly.
+Real-world Modeling: Reflects real-world relationships where certain objects are inherently part of others, making it easier to model complex systems accurately.

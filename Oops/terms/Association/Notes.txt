@@ -1,0 +1,11 @@
+Association :-
+- Ek object ka dusre object se connection ko association kehte hain.
+- Association is the base relationship.
+- Aggregation and Composition dono association ke types hain.
+
+
+Association
+   |
+   |---- Aggregation (weak)
+   |
+   |---- Composition (strong)

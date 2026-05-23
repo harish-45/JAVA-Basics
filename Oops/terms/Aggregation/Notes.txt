@@ -1,0 +1,16 @@
+Aggregation :- 
+
+- "Has-A" relationship.
+
+- one object contains another object as a part of it, but the contained object can exist independently.
+
+👉 Aggregation is a relationship where:
+- One object uses another object
+- But both can exist independently
+
+
+🔥 Why Use Aggregation? : 
+👉 Code Reusability
+👉 Better modularity
+👉 Loose coupling
+👉 Real-world modeling
